@@ -13,7 +13,7 @@ ENV GOROOT /usr/local/go
 ENV GOPATH /opt/lnd
 ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
 ENV GO_VERSION 1.13.5
-ENV LND_VERSION v0.9.2-beta
+ENV LND_VERSION v0.10.0-beta
 
 # Update & install packages for go-callisto dep
 RUN apt-get update && \
