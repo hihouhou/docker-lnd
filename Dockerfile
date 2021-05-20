@@ -12,10 +12,10 @@ MAINTAINER hihouhou < hihouhou@hihouhou.com >
 ENV GOROOT /usr/local/go
 ENV GOPATH /opt/lnd
 ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
-ENV GO_VERSION 1.13.5
-ENV LND_VERSION v0.11.1-beta
+ENV GO_VERSION 1.16.3
+ENV LND_VERSION v0.13.0-beta.rc3
 
-# Update & install packages for go-callisto dep
+# Update & install packages
 RUN apt-get update && \
     apt-get install -y wget git make build-essential
 
@@ -32,6 +32,6 @@ RUN mkdir -p $GOPATH/src/github.com/lightningnetwork/lnd && \
     wget https://github.com/lightningnetwork/lnd/archive/${LND_VERSION}.tar.gz && \
     tar --strip-components=1 -xf ${LND_VERSION}.tar.gz && \
     rm ${LND_VERSION}.tar.gz && \
-    make && make install
+    make && make install tags="signrpc walletrpc chainrpc invoicesrpc monitoring"
 
 CMD lnd $OPTIONS
