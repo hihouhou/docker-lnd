@@ -12,8 +12,8 @@ MAINTAINER hihouhou < hihouhou@hihouhou.com >
 ENV GOROOT /usr/local/go
 ENV GOPATH /opt/lnd
 ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
-ENV GO_VERSION 1.18.2
-ENV LND_VERSION v0.15.5-beta
+ENV GO_VERSION 1.19
+ENV LND_VERSION v0.16.2-beta
 
 # Update & install packages
 RUN apt-get update && \
