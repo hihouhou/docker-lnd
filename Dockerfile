@@ -13,7 +13,7 @@ ENV GOROOT /usr/local/go
 ENV GOPATH /opt/lnd
 ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
 ENV GO_VERSION 1.19
-ENV LND_VERSION v0.16.2-beta
+ENV LND_VERSION v0.16.4-beta
 
 # Update & install packages
 RUN apt-get update && \
