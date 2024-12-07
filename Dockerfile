@@ -7,13 +7,13 @@
 # Pull base image.
 FROM debian:latest
 
-MAINTAINER hihouhou < hihouhou@hihouhou.com >
+LABEL org.opencontainers.image.authors="hihouhou < hihouhou@hihouhou.com >"
 
-ENV GOROOT /usr/local/go
-ENV GOPATH /opt/lnd
-ENV PATH $GOPATH/bin:$GOROOT/bin:$PATH
-ENV GO_VERSION 1.19
-ENV LND_VERSION v0.16.4-beta
+ENV GOROOT=/usr/local/go
+ENV GOPATH=/opt/lnd
+ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+ENV GO_VERSION=1.23.0
+ENV LND_VERSION=v0.18.3-beta
 
 # Update & install packages
 RUN apt-get update && \
