@@ -13,14 +13,14 @@ ENV GOROOT=/usr/local/go
 ENV GOPATH=/opt/lnd
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 ENV GO_VERSION=1.23.0
-ENV LND_VERSION=v0.18.3-beta
+ENV LND_VERSION=v0.20.0-beta
 
 # Update & install packages
 RUN apt-get update && \
     apt-get install -y wget git make build-essential
 
 # Get go
-RUN wget https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz && \
+RUN wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
     tar -xvf go${GO_VERSION}.linux-amd64.tar.gz && \
     mv go /usr/local
 
